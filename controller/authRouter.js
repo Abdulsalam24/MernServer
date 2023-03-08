@@ -14,7 +14,7 @@ router.post("/signup", async (req, res) => {
         return;
     }
 
-    if (!(role !== "admin" && role !== "user")) {
+    if (!(role !== "admin" | role !== "user")) {
         res.status(400).json({ message: "role can only be admin/user" })
         return;
     }
