@@ -59,9 +59,10 @@ router.post("/signup", async (req, res) => {
 
 
 router.post("/signin", async (req, res) => {
-    const { email, password, role } = req.body
+    const { email, password } = req.body
     const user = await User.findOne({ email })
-    if (user && role === user.role && await bcrypt.compare(password, user.password)) {
+
+    if (user && await bcrypt.compare(password, user.password)) {
         res.status(201).json({ token : generateToken(user.id), message: "signin successfully" })
     } else {
         res.status(401).json({ message: "wrong user credentials" })

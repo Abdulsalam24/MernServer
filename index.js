@@ -17,7 +17,7 @@ app.listen(PORT, () => {
 })
 
 app.get("/", (req, res) => {
-    res.send("Hey")
+    res.send("Hey you are welcome")
 }) 
 
 app.use("/api", router)
