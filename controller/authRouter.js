@@ -6,8 +6,6 @@ import dotenv from 'dotenv/config'
 
 const router = express.Router()
 
-
-
 router.post("/signup", async (req, res) => {
     const { email, password, role } = req.body
 
